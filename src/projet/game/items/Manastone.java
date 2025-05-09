@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Manastone implements Items {
     private int UID = 0;
-    private int[] coordonates = {0,0,0,0};
+    private int[] coordonates = { 0, 0, 0, 0 };
     private final String name;
     private final String imgPath;
     private int quantity;
@@ -17,7 +17,7 @@ public class Manastone implements Items {
         this.name = Objects.requireNonNull(name);
         this.imgPath = Objects.requireNonNull(imgPath);
         this.quantity = maximumMana;
-        this.maximumMana= maximumMana;
+        this.maximumMana = maximumMana;
         this.size = size;
     }
 
@@ -49,8 +49,8 @@ public class Manastone implements Items {
     public void setXY(int X, int Y) {
         this.coordonates[0] = X;
         this.coordonates[1] = Y;
-        this.coordonates[2]= 80*this.getSize().length;
-        this.coordonates[3] = 80*this.getSize()[0].length;
+        this.coordonates[2] = 80 * this.getSize().length;
+        this.coordonates[3] = 80 * this.getSize()[0].length;
     }
 
     @Override
@@ -63,18 +63,15 @@ public class Manastone implements Items {
         return name;
     }
 
-
     @Override
     public String getImgPath() {
         return imgPath;
     }
 
-
     @Override
     public HashMap<String, Integer> getCost() {
         return null;
     }
-
 
     @Override
     public int[][] getSize() {
@@ -91,7 +88,6 @@ public class Manastone implements Items {
         return "Manastone";
     }
 
-
     @Override
     public HashMap<String, Integer> getOnUseInteraction() {
         return null;
@@ -99,7 +95,7 @@ public class Manastone implements Items {
 
     @Override
     public HashMap<String, Integer> getEachTurnInteraction() {
-        return null; 
+        return null;
     }
 
     @Override
@@ -113,7 +109,8 @@ public class Manastone implements Items {
     }
 
     @Override
-    public void setAction(int I) {}
+    public void setAction(int I) {
+    }
 
     @Override
     public double getRotation() {
@@ -123,7 +120,6 @@ public class Manastone implements Items {
     @Override
     public void setRotation() {
     }
-
 
     @Override
     public void switchLenght() {
@@ -135,11 +131,12 @@ public class Manastone implements Items {
     public int getMaximumMana() {
         return maximumMana;
     }
-    
-	@Override
-	public void resetAction() {}
-	
-	public void resetManastone() {
-		quantity = maximumMana;
-	}
+
+    @Override
+    public void resetAction() {
+    }
+
+    public void resetManastone() {
+        quantity = maximumMana;
+    }
 }

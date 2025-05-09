@@ -2,8 +2,8 @@ package projet.game.fight;
 
 import java.util.HashMap;
 
-public interface Effects{
-	public int getHaste();
+public interface Effects {
+    public int getHaste();
 
     public int getRage();
 
@@ -28,15 +28,15 @@ public interface Effects{
     public int getRoughSide();
 
     public int getSleep();
-    
+
     public void setHaste(int h);
-    
+
     public void setRage(int rage);
-    
+
     public void setSlow(int slow);
-    
+
     public void setWeak(int weak);
-    
+
     public void setPoison(int poison);
 
     public void setBurn(int burn);
@@ -44,7 +44,7 @@ public interface Effects{
     public void setFreeze(int freeze);
 
     public void setRegen(int regen);
-    
+
     public void setZombie(boolean zombie);
 
     public void setCharm(int charm);
@@ -54,6 +54,6 @@ public interface Effects{
     public void setRoughSide(int roughSide);
 
     public void setSleep(int sleep);
-    
+
     public HashMap<String, Integer> getEffects();
 }

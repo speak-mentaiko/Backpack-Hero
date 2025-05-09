@@ -1,5 +1,5 @@
 package projet.game.events;
 
-public interface Events{
+public interface Events {
 
 }

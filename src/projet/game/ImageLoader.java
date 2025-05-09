@@ -16,7 +16,7 @@ public class ImageLoader {
 
 	public ImageLoader(String dir, String blank, String... pics) {
 		Objects.requireNonNull(pics);
-		
+
 		images = new HashMap<>();
 		setImage(0, dir, blank);
 		for (var i = 0; i < pics.length; i++) {
@@ -26,6 +26,7 @@ public class ImageLoader {
 
 	/**
 	 * ajoute des images avec leur nom dans le ImageLoader
+	 * 
 	 * @param position
 	 * @param dirPath
 	 * @param imagePath
@@ -50,11 +51,12 @@ public class ImageLoader {
 
 	/**
 	 * renvoi une image en fonction de son nom
+	 * 
 	 * @param img
 	 * @return
 	 */
 	public BufferedImage image(String img) {
 		return images.get(img);
 	}
-	
+
 }

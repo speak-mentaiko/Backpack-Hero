@@ -8,10 +8,10 @@ public class Room {
     private boolean canGoThrough;
     private boolean isFinal;
 
-    public Room(String iud, Openings openings, int choix ,boolean isFinal) {
+    public Room(String iud, Openings openings, int choix, boolean isFinal) {
         this.iud = iud;
         this.openings = openings;
-        this.choix =  choix;
+        this.choix = choix;
         StringBuilder sb = new StringBuilder();
         for (int coord : openings.getCoords()) {
             sb.append(coord);
@@ -54,35 +54,34 @@ public class Room {
     public int[] getXY() {
         return null;
     }
-    
+
     public int getApparition() {
         return choix;
     }
-    
+
     /**
      * @param choix
      */
     public void setApparition(int choix) {
-    	this.choix = choix;
+        this.choix = choix;
     }
-    
+
     /**
      * @param f
      */
     public void setIsFinal(boolean f) {
-    	this.isFinal = f;
+        this.isFinal = f;
     }
 
-	public boolean getCanGoThrough() {
-		return canGoThrough;
-	}
-	
-	/**
-	 * @param i
-	 */
-	public void setCanGoThrough(boolean i) {
-		this.canGoThrough = i ;
-	}
+    public boolean getCanGoThrough() {
+        return canGoThrough;
+    }
 
+    /**
+     * @param i
+     */
+    public void setCanGoThrough(boolean i) {
+        this.canGoThrough = i;
+    }
 
 }
