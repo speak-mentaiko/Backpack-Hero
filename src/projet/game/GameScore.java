@@ -77,7 +77,7 @@ public class GameScore {
 
 	/**
 	 * スコアを返す
-	 * 
+	 *
 	 * @return
 	 */
 	public int getScore() {
@@ -204,5 +204,4 @@ public class GameScore {
 	public String getNameGame() {
 		return namegame;
 	}
-
 }

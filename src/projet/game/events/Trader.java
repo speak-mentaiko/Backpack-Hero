@@ -10,8 +10,8 @@ public class Trader implements Events {
 	private final HashMap<Items, Integer> store;
 
 	/**
-	 * on genère le stock du marchand
-	 * 
+	 * 商人の在庫を生成する
+	 *
 	 * @param gamedata
 	 */
 	public Trader(GameModel gamedata) {
@@ -51,8 +51,8 @@ public class Trader implements Events {
 	}
 
 	/**
-	 * enlève l'objet du magasin (il ne coute plus d'argent)
-	 * 
+	 * 店の在庫からアイテムを取り除く（アイテムの価格が無くなる）
+	 *
 	 * @param item
 	 */
 	public void removeItemFromStore(Items item) {
@@ -69,5 +69,4 @@ public class Trader implements Events {
 	public String getImgPath() {
 		return imgPath;
 	}
-
 }

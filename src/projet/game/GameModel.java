@@ -765,5 +765,4 @@ public class GameModel {
 	public boolean hallOfFame() {
 		return hallOfFame;
 	}
-
 }

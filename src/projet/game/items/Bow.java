@@ -37,7 +37,7 @@ public class Bow implements Weapons {
 	}
 
 	/**
-	 * renvoi une copie de l'item
+	 * アイテムのコピーを返す
 	 */
 	@Override
 	public Bow copie() {

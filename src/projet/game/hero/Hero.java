@@ -13,19 +13,19 @@ public class Hero implements Effects {
 	private int level;
 	private final HashMap<Integer, Integer> levels;
 
-	// effets sur les actions
-	int haste = 0; // + shield
-	int rage = 0; // + attack
-	int slow = 0; // - shield
-	int weak = 0; // -attack
+	// アクションに対する効果
+	int haste = 0; // + シールド
+	int rage = 0; // + 攻撃力
+	int slow = 0; // - シールド
+	int weak = 0; // - 攻撃力
 
-	// effets dégats
+	// ダメージ効果
 	int poison = 0;
 	int burn = 0;
 	int freeze = 0;
 	int regen = 0;
 
-	// effets autres
+	// その他効果
 	boolean zombie = false;
 	int charm = 0;
 	int dodge = 0;
@@ -52,8 +52,8 @@ public class Hero implements Effects {
 	}
 
 	/**
-	 * Encaisser les dégâts
-	 * 
+	 * ダメージを受ける
+	 *
 	 * @param dmg
 	 */
 	public void damageTaken(int dmg) {
@@ -79,8 +79,8 @@ public class Hero implements Effects {
 	}
 
 	/**
-	 * pour se rendre des points de vie
-	 * 
+	 * 自身のHPを回復する
+	 *
 	 * @param heal
 	 */
 	public void healHimself(int heal) {
@@ -96,8 +96,8 @@ public class Hero implements Effects {
 	}
 
 	/**
-	 * pour se donner de l'armure
-	 * 
+	 * 自身にアーマーを付与する
+	 *
 	 * @param prot
 	 */
 	public void protect(int prot) {
@@ -113,8 +113,8 @@ public class Hero implements Effects {
 	}
 
 	/**
-	 * gagne un niveau
-	 * 
+	 * レベルアップするかどうかを判定する
+	 *
 	 * @return
 	 */
 	public boolean isLevelUp() {
@@ -243,7 +243,7 @@ public class Hero implements Effects {
 	}
 
 	/**
-	 * liste les effets actifs
+	 * 発動中の効果を一覧にする
 	 */
 	@Override
 	public HashMap<String, Integer> getEffects() {
@@ -280,7 +280,7 @@ public class Hero implements Effects {
 	}
 
 	/**
-	 * réduit de 1 les effets par tour
+	 * 各効果のターン数を1減らす
 	 */
 	public void decreaseEffects() {
 		HashMap<String, Integer> effetsActifs = getEffects();
@@ -400,6 +400,7 @@ public class Hero implements Effects {
 	}
 
 	public void doPoisonAndRegen() {
+		// 「毒（poison）」状態、かつ「ゾンビ（zombie）」なら回復、それ以外はダメージ
 		if (poison != 0) {
 			if (zombie) {
 				healHimself(poison);
@@ -407,7 +408,7 @@ public class Hero implements Effects {
 				healHimself(-poison);
 			}
 		}
-		// Si regen, si zombie -> health -+ regen
+		// 「再生（regen）」状態、かつ「ゾンビ」ならダメージ、それ以外は回復
 		if (regen != 0) {
 			if (zombie) {
 				healHimself(-regen);

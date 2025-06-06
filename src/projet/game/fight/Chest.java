@@ -18,8 +18,8 @@ public class Chest {
 	}
 
 	/**
-	 * génere la liste des récompenses du coffre
-	 * 
+	 * 宝箱の報酬リストを生成する
+	 *
 	 * @param gamedata
 	 * @return
 	 */
@@ -58,8 +58,8 @@ public class Chest {
 	public void setXY(int X, int Y) {
 		this.coordonates[0] = X;
 		this.coordonates[1] = Y;
-		this.coordonates[2] = 90 * 50; // hauteur image
-		this.coordonates[3] = 90 * 50; // longueur image
+		this.coordonates[2] = 90 * 50; // 画像の高さ
+		this.coordonates[3] = 90 * 50; // 画像の幅
 	}
 
 	public String getImgPath() {
@@ -69,5 +69,4 @@ public class Chest {
 	public String getDescription() {
 		return description;
 	}
-
 }

@@ -28,12 +28,12 @@ public class Healer implements Events {
 		// this.farewellQuote = allFarewellsQuotes.get(new
 		// Random().nextInt(allFarewellsQuotes.size()));
 
-		// Random quote for all trade
+		// すべてのトレードに対するランダムなセリフ
 
-		// Curse
+		// 呪い(Curse)
 		var quotes1 = new HashMap<String, String>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -44,7 +44,7 @@ public class Healer implements Events {
 		};
 		var all1 = new HashMap<Integer, HashMap<String, String>>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -54,12 +54,12 @@ public class Healer implements Events {
 		};
 		this.trade.put("Remove all curses (3 gold)", all1);
 
-		// Heal
+		// 回復(Heal)
 		var healerQuotes1 = new ArrayList<String>(
 				Arrays.asList("Glad to have helped you!", "You look stronger my dear!"));
 		var quotes2 = new HashMap<String, String>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -70,7 +70,7 @@ public class Healer implements Events {
 		};
 		var all2 = new HashMap<Integer, HashMap<String, String>>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -80,7 +80,7 @@ public class Healer implements Events {
 		};
 		this.trade.put("Heal 25 health (5 gold)", all2);
 
-		// Max Heal
+		// 最大回復(Max Heal)
 		var narratorQuotes2 = new ArrayList<String>(Arrays.asList(
 				"\"The healer taps a staff against your nose. The boop makes you stronger\"",
 				"\"She reaches out to you. You feel a great strength in you rising. Your paws are firmly planted, but it almost feels that you are floating.\""));
@@ -89,7 +89,7 @@ public class Healer implements Events {
 						"May you achieve what seemed impossible.", "Your bravery astounds me."));
 		var quotes3 = new HashMap<String, String>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -100,7 +100,7 @@ public class Healer implements Events {
 		};
 		var all3 = new HashMap<Integer, HashMap<String, String>>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -110,10 +110,10 @@ public class Healer implements Events {
 		};
 		this.trade.put("Gain 5 max health (8 gold)", all3);
 
-		// Nothing
+		// 何もしない(Nothing)
 		var quotes4 = new HashMap<String, String>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -123,7 +123,7 @@ public class Healer implements Events {
 		};
 		var all4 = new HashMap<Integer, HashMap<String, String>>() {
 			/**
-			* 
+			*
 			*/
 			private static final long serialVersionUID = 1L;
 
@@ -135,8 +135,8 @@ public class Healer implements Events {
 	}
 
 	/**
-	 * donne l'effet désiré au joueur en échange d'or
-	 * 
+	 * プレイヤーにゴールドと引き換えに望む効果を与える
+	 *
 	 * @param x
 	 * @param y
 	 * @param hero

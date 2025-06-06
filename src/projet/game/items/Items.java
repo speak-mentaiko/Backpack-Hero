@@ -12,7 +12,7 @@ public interface Items {
 	void setXY(int X, int Y);
 
 	/**
-	 * échange les tailles maximales de l'objet
+	 * オブジェクトの最大サイズを入れ替える
 	 */
 	void switchLenght();
 
@@ -41,15 +41,15 @@ public interface Items {
 	void setRotation();
 
 	/**
-	 * renvoi une copie de l'item
-	 * 
+	 * アイテムのコピーを返す
+	 *
 	 * @return
 	 */
 	Items copie();
 
 	/**
-	 * permet de tourner l'objet de 90°
-	 * 
+	 * オブジェクトを90度回転させる
+	 *
 	 * @param matrix
 	 * @return
 	 */

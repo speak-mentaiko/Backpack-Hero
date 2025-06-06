@@ -14,7 +14,7 @@ public class RandomMap {
 		this.carte = generateRandomMap(floor);
 	}
 
-	// FONCTION GENERATION MAP
+	// マップ生成関数
 	// ---------------------------------------------------------------------------------------------------------------------------
 
 	private Room[][] generateRandomMap(int floor) {
@@ -52,8 +52,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * créer un chemin entre deux points
-	 * 
+	 * 2転換の経路を作成する
+	 *
 	 * @param map
 	 * @param startRow
 	 * @param startCol
@@ -89,8 +89,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * génère des room adjacentes sur les bords du chemin principal
-	 * 
+	 * メインの刑をの両端に隣接する部屋を生成する
+	 *
 	 * @param map
 	 * @param floor
 	 * @param startRow
@@ -149,8 +149,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * Verifie si il est possible de créer des pièces adjacentes
-	 * 
+	 * 隣接する部屋を作成可能か確認する
+	 *
 	 * @param row
 	 * @param col
 	 * @param numRows
@@ -179,8 +179,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * Genère l'IUD des room
-	 * 
+	 * 部屋のIDを生成する
+	 *
 	 * @param floor
 	 * @param row
 	 * @param col
@@ -191,8 +191,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * Place le guérisseur et le marchand
-	 * 
+	 * ヒーラーと商人を配置する
+	 *
 	 * @param map
 	 * @param adjacentRooms
 	 * @param startRow
@@ -229,8 +229,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * Place les ennemis et les coffres
-	 * 
+	 * 敵と宝箱を配置する
+	 *
 	 * @param map
 	 * @param startRow
 	 * @param startCol
@@ -275,11 +275,11 @@ public class RandomMap {
 		}
 	}
 
-	// FONCTION AUTRES
+	// その他の関数
 	// ---------------------------------------------------------------------------------------------------------------------------
 
 	/**
-	 * 
+	 * マップを表示する
 	 */
 	public void afficherCarte() {
 		for (Room[] ligne : carte) {
@@ -302,7 +302,7 @@ public class RandomMap {
 	}
 
 	/**
-	 * @return pièce du début
+	 * @return スタート位置の部屋名
 	 */
 	public String getStartPosition() {
 		return begin;
@@ -310,7 +310,7 @@ public class RandomMap {
 
 	/**
 	 * @param room
-	 * @return Position X de la pièce
+	 * @return 部屋のx座標
 	 */
 	public int getRoomPosX(Room room) {
 		if (room != null) {
@@ -348,7 +348,7 @@ public class RandomMap {
 
 	/**
 	 * @param name
-	 * @return Room avec le nom de pièce name
+	 * @return 指定した名前の部屋オブジェクト
 	 */
 	public Room getRoom(String name) {
 		for (int i = 0; i < this.getCarte().length; i++) {
@@ -366,7 +366,7 @@ public class RandomMap {
 	/**
 	 * @param x
 	 * @param y
-	 * @return room
+	 * @return 部屋オブジェクト
 	 */
 	public Room getRoomWithCoordonates(int x, int y) {
 		int row = (y - 50) / 75;
@@ -378,8 +378,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * vérifie si le chemin pour se déplacer est valide
-	 * 
+	 * 移動経路が有効かどうかを確認する
+	 *
 	 * @param startRow
 	 * @param startCol
 	 * @param endRow
@@ -398,8 +398,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * fonction récursive pour isValidPath
-	 * 
+	 * 経路探索関数
+	 *
 	 * @param currRow
 	 * @param currCol
 	 * @param endRow
@@ -431,8 +431,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * vérifie si la room existe
-	 * 
+	 * 指定された座標に部屋が存在するか確認する
+	 *
 	 * @param row
 	 * @param col
 	 * @return
@@ -444,8 +444,8 @@ public class RandomMap {
 	}
 
 	/**
-	 * vérifie si on peut passer
-	 * 
+	 * 指定された座標の部屋を通過できるか確認する
+	 *
 	 * @param row
 	 * @param col
 	 * @return
@@ -460,5 +460,4 @@ public class RandomMap {
 		}
 		return room != null && room.getCanGoThrough();
 	}
-
 }

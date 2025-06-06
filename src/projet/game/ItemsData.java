@@ -47,22 +47,26 @@ public class ItemsData {
 		}
 	}
 
-	// Fonction de création
+	// 生成関数
 
 	/**
-	 * création des items du jeu
-	 * 
+	 * ゲーム内アイテムの生成
+	 *
 	 * @return
 	 */
 	@SuppressWarnings("serial")
 	public static ArrayList<Items> allItems() {
 		ArrayList<Items> allItems = new ArrayList<Items>();
-		allItems.add(new Melee("Wooden Sword", "Wooden_sword.png", new HashMap<String, Integer>(),
-				new HashMap<String, Integer>(), new HashMap<String, Integer>() {
+		allItems.add(new Melee("Wooden Sword", "Wooden_sword.png",
+				new HashMap<String, Integer>(),
+				new HashMap<String, Integer>(),
+				new HashMap<String, Integer>() {
 					{
 						put("Damage", 7);
 					}
-				}, new int[][] { { 1 }, { 1 }, { 1 } }, 1, 0, 0, "Common", "On use :	\nDeals 7 Damages"));
+				},
+				new int[][] { { 1 }, { 1 }, { 1 } },
+				1, 0, 0, "Common", "On use :	\nDeals 7 Damages"));
 		allItems.add(new Shield("Rough Blocker", "Rough_Buckler.png", new HashMap<String, Integer>(),
 				new HashMap<String, Integer>(), new HashMap<String, Integer>() {
 					{
@@ -367,8 +371,8 @@ public class ItemsData {
 	}
 
 	/**
-	 * creation des ennemis du jeu
-	 * 
+	 * ゲーム内の敵キャラクターの生成
+	 *
 	 * @return
 	 */
 	public static ArrayList<Bestiary> allEnemies() {
@@ -396,8 +400,8 @@ public class ItemsData {
 	}
 
 	/**
-	 * selection d'un item aleatoire
-	 * 
+	 * ランダムなアイテムの選択
+	 *
 	 * @return
 	 */
 	public Items randomItem() {

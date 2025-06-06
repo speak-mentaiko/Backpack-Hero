@@ -37,7 +37,7 @@ public class Armor implements Items {
 	}
 
 	/**
-	 * renvoi une copie de l'item
+	 * アイテムのコピーを返す
 	 */
 	@Override
 	public Armor copie() {

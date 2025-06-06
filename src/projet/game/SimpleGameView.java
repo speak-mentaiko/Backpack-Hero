@@ -14,7 +14,6 @@ import fr.umlv.zen5.ApplicationContext;
 import projet.game.fight.bestiary.Bestiary;
 import projet.game.hero.Backpack;
 import projet.game.items.*;
-import projet.game.items.Manastone;
 import projet.game.map.RandomMap;
 import projet.game.map.Room;
 
@@ -57,8 +56,9 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 		return realCoordFromIndex(j, yOrigin);
 	}
 
-	// ----------------------------------- LES STRINGS AFFICHAGES
+	// ----------------------------------- 表示用の文字列関連
 	// ----------------------------------------------------------------------------------------------------------------------------
+
 	private void drawStr(Graphics2D graphics, String string, int i, int j, int size, Color color) {
 		Font myFont = new Font("Courier New", Font.BOLD, size);
 		graphics.setFont(myFont);
@@ -73,8 +73,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 	}
 
 	/**
-	 * dessine une string
-	 * 
+	 * 文字列を描画する
+	 *
 	 * @param context
 	 * @param view
 	 * @param string
@@ -88,11 +88,12 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 		context.renderFrame(graphics -> view.drawStr((Graphics2D) graphics, string, i, j, size, color));
 	}
 
-	// ----------------------------------- LES IMAGES AFFICHAGES
+	// ----------------------------------- 画像の描画関連
 	// ----------------------------------------------------------------------------------------------------------------------------
+
 	/**
-	 * dessine une image
-	 * 
+	 * 画像を描画する
+	 *
 	 * @param context
 	 * @param view
 	 * @param images
@@ -121,8 +122,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 	}
 
 	/**
-	 * dessine un rectangle
-	 * 
+	 * 四角形を描画する
+	 *
 	 * @param context
 	 * @param view
 	 * @param x
@@ -144,8 +145,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 	}
 
 	/**
-	 * dessine les bords d'un rectangle
-	 * 
+	 * 四角形の枠線を描画する
+	 *
 	 * @param context
 	 * @param view
 	 * @param x
@@ -164,12 +165,13 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 			g2d.drawRect((int) x, (int) y, (int) width, (int) height);
 		});
 	}
-	// ----------------------------------- LES MODIFICATIONS DES IMAGES
+
+	// ----------------------------------- 画像の変形処理
 	// ----------------------------------------------------------------------------------------------------------------------------
 
 	/**
-	 * fait une rotation de l'image
-	 * 
+	 * 画像を回転させる
+	 *
 	 * @param image
 	 * @param angle
 	 * @return
@@ -197,7 +199,7 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 		return rotatedImage;
 	}
 
-	// ----------------------------------- LES ELEMENTS AFFICHAGES
+	// ----------------------------------- 表示される要素
 	// ----------------------------------------------------------------------------------------------------------------------------
 
 	public static void drawMap(ApplicationContext context, SimpleGameView view, RandomMap map) {
@@ -393,8 +395,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 	}
 
 	/**
-	 * dessine la fiche de description d'un item
-	 * 
+	 * アイテムの説明カードを描画する
+	 *
 	 * @param context
 	 * @param view
 	 * @param data
@@ -404,7 +406,7 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 		if (item.getClass() != Manastone.class && item.getClass() != Gold.class) {
 			SimpleGameView.draw(context, view, view.loader.image("explaincard.png"), 1350, 30, 500, 500);
 
-			// EN HAUT
+			// 上部
 			drawStringR(context, view, item.getName(), 1500, 100, 28, Color.WHITE);
 			SimpleGameView.draw(context, view, view.loader.image(item.getImgPath()), 1550, 150, 100, 100);
 			int[][] size = data.getItemSelected().getSize();
@@ -448,7 +450,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 					j += 60;
 				}
 			}
-			// MILIEU
+
+			// 中央
 			Color color = null;
 			if (item.getRarety() != null) {
 				if (item.getRarety().equals("Common")) {
@@ -464,7 +467,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 			}
 			drawStringR(context, view, item.getClass().getSimpleName(), 1480, 300, 20, Color.WHITE);
 			drawRectangle(context, view, 1450, 315, 310, 2, Color.WHITE, 1);
-			// BAS
+
+			// 下部
 			drawStringR(context, view, item.getDescription(), 1440, 340, 15, Color.WHITE);
 			if (item.getAction() != 0) {
 				drawRectangle(context, view, 1450, 440, 310, 2, Color.WHITE, 1);
@@ -475,8 +479,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 	}
 
 	/**
-	 * dessine la carte du marchand
-	 * 
+	 * 商人のカードを表示
+	 *
 	 * @param context
 	 * @param view
 	 * @param data
@@ -586,11 +590,12 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 		}
 	}
 
-	// ----------------------------------------DEMARRAGE DU DESSIN
+	// ----------------------------------------描画の開始
 	// --------------------------------------------------------------------------------------------------------------
+
 	/**
-	 * lance le dessin du jeu
-	 * 
+	 * ゲームの描画を開始する
+	 *
 	 * @param context
 	 * @param view
 	 * @param data
@@ -600,8 +605,8 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 	}
 
 	/**
-	 * permet de tout dessiner en fonction du GameModel
-	 * 
+	 * GameModelに基づいてすべてを描画する
+	 *
 	 * @param context
 	 * @param view
 	 * @param data
@@ -639,8 +644,6 @@ public record SimpleGameView(int xOrigin, int yOrigin, int height, int width, Im
 				drawMap(context, view, data.getActualMap());
 				drawCharacterPosition(context, view, data);
 			}
-
 		}
 	}
-
 }

@@ -25,8 +25,8 @@ public class ImageLoader {
 	}
 
 	/**
-	 * ajoute des images avec leur nom dans le ImageLoader
-	 * 
+	 * 指定された名前の画像をImageLoaderに追加する
+	 *
 	 * @param position
 	 * @param dirPath
 	 * @param imagePath
@@ -50,8 +50,8 @@ public class ImageLoader {
 	}
 
 	/**
-	 * renvoi une image en fonction de son nom
-	 * 
+	 * 指定された名前の画像を返す
+	 *
 	 * @param img
 	 * @return
 	 */

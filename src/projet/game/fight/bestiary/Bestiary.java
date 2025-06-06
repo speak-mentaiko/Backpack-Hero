@@ -13,15 +13,15 @@ public interface Bestiary extends Effects {
 	void setXY(int X, int Y);
 
 	/**
-	 * prédit quelle action l'ennemi va effectuer
-	 * 
+	 * 敵がどんな行動を取るか予測する
+	 *
 	 * @return
 	 */
 	public HashMap<String, Integer> prediction();
 
 	/**
-	 * tour de l'ennemi durant le combat
-	 * 
+	 * 戦闘中の敵のターン
+	 *
 	 * @param gamedata
 	 * @param hero
 	 */
@@ -34,8 +34,8 @@ public interface Bestiary extends Effects {
 	int getMaxHealth();
 
 	/**
-	 * action de l'ennemi
-	 * 
+	 * 敵の次の行動
+	 *
 	 * @return
 	 */
 	String getNextAction();
@@ -47,8 +47,8 @@ public interface Bestiary extends Effects {
 	void setHealth(int i);
 
 	/**
-	 * encaisse les dégâts du héro
-	 * 
+	 * ヒーローからのダメージ
+	 *
 	 * @param dmg
 	 */
 	void damageTaken(int dmg);

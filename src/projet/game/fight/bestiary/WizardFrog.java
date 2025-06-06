@@ -21,19 +21,19 @@ public class WizardFrog implements Bestiary, Effects {
 	private HashMap<String, Integer> nextAction;
 	private final String description;
 
-	// effets sur les actions
-	int haste = 0; // + shield
-	int rage = 0; // + attack
-	int slow = 0; // - shield
-	int weak = 0; // -attack
+	// アクションに対する効果
+	int haste = 0; // + シールド
+	int rage = 0; // + 攻撃力
+	int slow = 0; // - シールド
+	int weak = 0; // - 攻撃力
 
-	// effets dégats
+	// ダメージ効果
 	int poison = 0;
 	int burn = 0;
 	int freeze = 0;
 	int regen = 0;
 
-	// effets autres
+	// その他効果
 	boolean zombie = false;
 	int charm = 0;
 	int dodge = 0;
@@ -105,17 +105,17 @@ public class WizardFrog implements Bestiary, Effects {
 
 	@Override
 	public void turn(GameModel gameData, Hero hero) {
-		// si l'ennemi a burn, alors il prend x brulures
 		resetProtection();
+		// 火傷ダメージ
 		this.health -= this.burn;
-		// Si health est inférieur ou égal à 0, l'ennemi meurt -> drop ressources
+		// 体力が0以下なら敵は死亡 → 報酬ドロップ
 		if (health <= 0) {
 			this.isAlive = false;
 			return;
 		}
-		// Si l'ennemi a sleep, alors il passe son tour
+		// 敵が「睡眠（sleep）」状態でない場合、行動する
 		if (sleep == 0) {
-			// L'ennemi fait son action entre attack et protect
+			// 敵は「Attack（攻撃）」または「Protect（防御）」などの行動を行う
 			String action = nextAction.keySet().iterator().next();
 			if (action.equals("Regen")) {
 				regen(nextAction.get(action));
@@ -125,8 +125,8 @@ public class WizardFrog implements Bestiary, Effects {
 				poison(hero, nextAction.get(action));
 			}
 		}
-		// À la fin du tour
-		// Si poison, si zombie -> health -+ poison
+		// ターン終了時の処理
+		// 「毒（poison）」状態、かつ「ゾンビ（zombie）」なら回復、それ以外はダメージ
 		if (poison != 0) {
 			if (zombie) {
 				this.health += poison;
@@ -134,7 +134,7 @@ public class WizardFrog implements Bestiary, Effects {
 				this.health -= poison;
 			}
 		}
-		// Si regen, si zombie -> health -+ regen
+		// 「再生（regen）」状態、かつ「ゾンビ」ならダメージ、それ以外は回復
 		if (regen != 0) {
 			if (zombie) {
 				this.health -= regen;
@@ -145,8 +145,8 @@ public class WizardFrog implements Bestiary, Effects {
 				}
 			}
 		}
-		// Si health est inférieur ou égal à 0, l'ennemi meurt -> isAlive = false ->
-		// drop ressources
+		// 体力が0以下であれば、敵は死亡する → isAlive を false に設定 → 資源をドロップ
+		// 状態異常の効果ターンを1減らす
 		decreaseEffects();
 		if (health <= 0) {
 			this.isAlive = false;

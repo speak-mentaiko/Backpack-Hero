@@ -11,8 +11,13 @@ public class Backpack {
 	private ArrayList<Items> inventory;
 
 	public Backpack() {
-		this.backpack = new int[][] { { -1, -1, -1, -1, -1, -1, -1 }, { -1, 0, 0, 0, 0, 0, -1 },
-				{ -1, 0, 0, 0, 0, 0, -1 }, { -1, 0, 0, 0, 0, 0, -1 }, { -1, -1, -1, -1, -1, -1, -1 } };
+		this.backpack = new int[][] {
+				{ -1, -1, -1, -1, -1, -1, -1 },
+				{ -1, 0, 0, 0, 0, 0, -1 },
+				{ -1, 0, 0, 0, 0, 0, -1 },
+				{ -1, 0, 0, 0, 0, 0, -1 },
+				{ -1, -1, -1, -1, -1, -1, -1 }
+		};
 		this.inventory = new ArrayList<Items>();
 	}
 
@@ -110,8 +115,8 @@ public class Backpack {
 	}
 
 	/**
-	 * supprime de l'écran
-	 * 
+	 * 画面から削除
+	 *
 	 * @param UID
 	 */
 	public void deleteItem(int UID) {
@@ -120,8 +125,8 @@ public class Backpack {
 	}
 
 	/**
-	 * ajoute sur l'écran mais pas dans le sac
-	 * 
+	 * 画面には追加するがバッグには追加しない
+	 *
 	 * @param item
 	 */
 	public void addItem(Items item) {
@@ -131,8 +136,8 @@ public class Backpack {
 	}
 
 	/**
-	 * vérifie le passif des objets qui ont besoin d'un emplacement spécial
-	 * 
+	 * 特別なスロットが必要なアイテムのパッシブ効果を確認する
+	 *
 	 * @param UID
 	 * @param verif
 	 * @return
@@ -159,8 +164,8 @@ public class Backpack {
 	}
 
 	/**
-	 * ajoute une malédiction au sac
-	 * 
+	 * バックに呪いを追加
+	 *
 	 * @param I
 	 * @param J
 	 * @param UID
@@ -200,8 +205,8 @@ public class Backpack {
 	}
 
 	/**
-	 * ajoute un item au sac
-	 * 
+	 * アイテムをバックに追加
+	 *
 	 * @param I
 	 * @param J
 	 * @param UID
@@ -278,8 +283,8 @@ public class Backpack {
 	}
 
 	/**
-	 * renvoi tous les items qui ne sont pas dans le sac
-	 * 
+	 * バッグに入っていないすべてのアイテムを返す
+	 *
 	 * @param data
 	 * @return
 	 */
@@ -334,8 +339,8 @@ public class Backpack {
 	}
 
 	/**
-	 * ajoute de l'or au sac
-	 * 
+	 * ゴールドをバッグに追加
+	 *
 	 * @param quantity
 	 */
 	public void addGold(int quantity) {

@@ -17,8 +17,8 @@ public class ItemsInteractions {
 	}
 
 	/**
-	 * calcul les passifs des items
-	 * 
+	 * アイテムのパッシブ効果を計算
+	 *
 	 * @param item
 	 * @param data
 	 * @param damage
@@ -106,8 +106,8 @@ public class ItemsInteractions {
 	}
 
 	/**
-	 * actions des items chaque tours après les passifs
-	 * 
+	 * パッシブ効果の後に毎ターンアイテムが行うアクション
+	 *
 	 * @param item
 	 * @param data
 	 * @param damage
@@ -135,8 +135,8 @@ public class ItemsInteractions {
 	}
 
 	/**
-	 * verifie si on peut utiliser l'objet
-	 * 
+	 * アイテムが使用できるかを確認する
+	 *
 	 * @param item
 	 * @param data
 	 * @return
@@ -205,8 +205,8 @@ public class ItemsInteractions {
 	}
 
 	/**
-	 * action principale des items
-	 * 
+	 * アイテムのアクション
+	 *
 	 * @param item
 	 * @param data
 	 */
@@ -396,8 +396,8 @@ public class ItemsInteractions {
 	}
 
 	/**
-	 * renvoi la liste des items autour d'un item
-	 * 
+	 * 指定したアイテムの周囲にあるアイテムのリストを返す
+	 *
 	 * @param item
 	 * @param data
 	 * @param classe
@@ -456,9 +456,8 @@ public class ItemsInteractions {
 	}
 
 	/**
-	 * permet de savoir le nombre de cases de l'inventaire vide dans une direction
-	 * donnée
-	 * 
+	 * 指定した方向にある空のインベントリのマス目の数を調べる
+	 *
 	 * @param item
 	 * @param data
 	 * @param direction
@@ -577,5 +576,4 @@ public class ItemsInteractions {
 		}
 		return maxCount;
 	}
-
 }
