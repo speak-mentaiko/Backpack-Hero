@@ -87,7 +87,7 @@ public class GameController {
 		GameModel data = new GameModel();
 
 		String dir = "data";
-		String blank = "Rot_Wolf.png";
+		String blank = "Rat_Wolf.png";
 		String[] otherImage = getAllImage(dir, blank);
 
 		var images = new ImageLoader(dir, blank, otherImage);
